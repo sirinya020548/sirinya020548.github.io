@@ -37,7 +37,7 @@
     <header>
         <div class="Jumbotron p-0 pt-5 pb-5 bg-primary text-white rounded">
             <video src="https://cdn.pixabay.com/video/2023/11/05/188021-881528788_large.mp4" autoplay loop muted></video>
-            <!--<img src="https://t4.ftcdn.net/jpg/04/62/21/15/360_F_462211578_LMWG8wR7TPtsqggjVKjkuHYw74JB63Jw.jpg" !--> alt="">
+            <!--<img src="https://t4.ftcdn.net/jpg/04/62/21/15/360_F_462211578_LMWG8wR7TPtsqggjVKjkuHYw74JB63Jw.jpg" !--> 
             
             <div class="header-text ms-5">
                 <h1>Jumbotron Example</h1>
@@ -110,14 +110,18 @@
                         <option value="แผนกสารสนเทศ">แผนกสารสนเทศ</option>
                       </select>
                 </div>
+                <div class="mb-3 form-check">Score</label>
+                  <input type="namber" class="form-control" id="score" name="score">
+
+
+                </div>
                 <button type="submit" class="btn btn-primary w-25"  onclick="click_submit()">Submit</button>
                 <button type="reset" class="btn btn-primary w-25">reset</button>
               </p>
               <p id="output1"></p>
               <p id="output2"></p>
               <p id="output3"></p>
-              
-              
+              <p id="output4"></p>
 
             </div>
           </div>
@@ -136,7 +140,24 @@
                 document.getElementById('output2').innerHTML = document.getElementById('phone').value
 
                 document.getElementById('output3').innerHTML = document.getElementById('dept').value
+
+                if (document.getElementById('score').value >= 0 && document.getElementById('score').value < 50) {
+                  
+                document.getElementById('output4').innerHTML = 'Grade = 0'
+                    } else if (document.getElementById('score').value > 49 && document.getElementById('score').value < 60) {
+                        document.getElementById('output4').innerHTML = 'Grade = 1'
+                        } else if(document.getElementById('score').value > 59 && document.getElementById('score').value < 70){
+                            document.getElementById('output4').innerHTML = 'Grade = 2'
+                            } else if(document.getElementById('score').value > 69 && document.getElementById('score').value < 80){
+                                document.getElementById('output4').innerHTML = 'Grade = 3'
+                                } else if(document.getElementById('score').value > 79 && document.getElementById('score').value < 101){
+                                    document.getElementById('output4').innerHTML = 'Grade = 4'
+                                    } else {
+                                         alert('Input score (0-100) Only!!!')
             }
+                
+            
+        }
            
         </script> 
     </body>
